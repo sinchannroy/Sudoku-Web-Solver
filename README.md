@@ -7,4 +7,4 @@ Sudoku is a logic-based, combinatorial number-placement puzzle. In classic Sudok
 #### Languages Used - Data Structures, Algorithms, Javascript (hint taken from web) (javascript is mainly used to apply the usage of DSA)
 #### Algorithms Used - Backtracking
 #### Data Structure Used - Arrays
-#### FrontEnd - HTML , CSS
+#### FrontEnd - HTML , CSS ((hint taken from web just used to build the website)
