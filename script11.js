@@ -79,21 +79,23 @@ function changeBoard (board) {
 
 
 button.onclick = function () {
-    var xhrRequest = new XMLHttpRequest()
-    xhrRequest.onload = function () {
-        var response = JSON.parse (xhrRequest.response)
-        console.log (response)
-        initializeTemp (temp)
-        resetColor ()
+    const data = null;
 
-        board = response.board
-        setTemp (board, temp)
-        setColor (temp)
-        changeBoard (board)
+    const xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+
+    xhr.addEventListener("readystatechange", function () {
+    if (this.readyState === this.DONE) {
+        console.log(this.responseText);
     }
-    xhrRequest.open ('get', 'https://sugoku.herokuapp.com/board?difficulty=easy')
+    });
+
+    xhr.open("GET", "https://sudoku-generator1.p.rapidapi.com/sudoku/generate?seed=1337");
+    xhr.setRequestHeader("X-RapidAPI-Key", "a4b3cd6bbcmsha2c7c3b88939df0p1bcb28jsne50831635ca2");
+    xhr.setRequestHeader("X-RapidAPI-Host", "sudoku-generator1.p.rapidapi.com");
+
+    xhr.send(data);
     //we can change the difficulty of the puzzle the allowed values of difficulty are easy, medium, hard and random
-    xhrRequest.send ()
 }
 
 function isPossible(board, r, c, val) {
