@@ -8,3 +8,5 @@ Sudoku is a logic-based, combinatorial number-placement puzzle. In classic Sudok
 #### Algorithms Used - Backtracking
 #### Data Structure Used - Arrays
 #### FrontEnd - HTML , CSS (hint taken from web just used to build the website)
+
+#### C++ Sudoku Solving Program - To explain the working of algorithm (Backtracking , Recursion) using C++ language.
