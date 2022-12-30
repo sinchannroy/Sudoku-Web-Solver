@@ -98,6 +98,7 @@ button.onclick = function () {
     //we can change the difficulty of the puzzle the allowed values of difficulty are easy, medium, hard and random
 }
 
+//Main DSA Part Starts from here
 function isPossible(board, r, c, val) {
     //not repeating in the same row or column
     for (var i = 0 ; i < 9 ; i++) {
@@ -107,8 +108,8 @@ function isPossible(board, r, c, val) {
     }
 
     //Subgrid
-    var sx = r - r % 3;
-    var sy = c - c % 3;
+    var sx = (r / 3) * 3;
+    var sy = (c / 3) * 3;
 
     for (var x = sx ; x < sx + 3; x++) {
         for (var y = sy ; y < sy + 3 ; y++) {
@@ -149,14 +150,16 @@ function solveSudokuHelper (board, r, c) {
             if (success == true) {
                 return true;
             }
-
-            //backtracking step
-            board [r] [c] = 0;
         }
     }
+
+    //backtracking step
+    board [r] [c] = 0;
+
     return false;
 
 }
+//Main DSA part ends here
 
 function solveSudoku (board) {
     solveSudokuHelper (board, 0, 0)
